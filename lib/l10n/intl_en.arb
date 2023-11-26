@@ -1,0 +1,16 @@
+{
+  "change_language": "Change language",
+  "search" : "Search",
+  "me" : "me",
+  "edit": "Edit",
+  "history": "History",
+  "share": "Share",
+  "settings": "Settings",
+  "profile": "Profile",
+  "id": "ID",
+  "nickname": "Nickname",
+  "please_enter_nickname": "Please enter your nickname",
+  "nickname_not_available": "This nickname is not available",
+  "save": "Save",
+  "others": "others"
+}

@@ -1,0 +1,16 @@
+{
+  "change_language": "Đổi ngôn ng",
+  "search" : "Tìm kiếm",
+  "me" : "Me",
+  "edit": "Chỉnh sửa",
+  "history": "Lịch sử",
+  "share": "Chia sẻ",
+  "settings": "Cài Đặt",
+  "profile": "Profile",
+  "id": "ID",
+  "nickname": "Nickname",
+  "please_enter_nickname": "Xin hãy nhập nickname",
+  "nickname_not_available": "Nickname đã được sử dụng",
+  "save": "Lưu",
+  "others": "Khác"
+}
