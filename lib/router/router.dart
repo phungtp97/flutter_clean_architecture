@@ -1,29 +1,30 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
+import '../pages/splash/splash_page.dart';
 import '../widgets/custom_page_route/custom_page_route.dart';
 import 'route_arguments.dart';
 
 class Routes {
   //? Splash route
-  static String get splash => '/';
+  static const String splash = '/';
 
-  static String get home => '/home';
+  static const String home = '/home';
 
-  static String get signup => '/login';
+  static const String signup = '/login';
 
-  static List<String> transparentRoutes = [
+  static List<String> transparentRoutes = [];
 
-  ];
-
-  static List<String> transitionBottomToTops = [
-
-  ];
+  static List<String> transitionBottomToTops = [];
 
   static getRoute(RouteSettings settings) {
     Widget widget;
     try {
-      widget = GetIt.I.get<Widget>(instanceName: settings.name);
+      if (settings.name == Routes.splash) {
+        widget = const SplashPage();
+      } else {
+        widget = GetIt.I.get<Widget>(instanceName: settings.name);
+      }
     } catch (e, stackTrace) {
       //Sentry
       widget = Scaffold(
@@ -54,7 +55,7 @@ class Routes {
       return PageRouteBuilder(opaque: false, pageBuilder: (_, __, ___) => widget, settings: newSettings);
     }
 
-    if(transitionBottomToTops.contains(settings.name)){
+    if (transitionBottomToTops.contains(settings.name)) {
       return FadeBottomToTopPageRoute(
         builder: (_) => widget,
         settings: settings,

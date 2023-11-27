@@ -1,4 +1,4 @@
-import 'package:flutter_clean_architecture/core/base/base.dart';
+import '../../core/base/base.dart';
 
 class SplashCommand extends Command {
 

@@ -14,6 +14,9 @@ import 'package:flutter/services.dart';
 class $AssetsPngGen {
   const $AssetsPngGen();
 
+  /// File path: assets/png/ic_brand.png
+  AssetGenImage get icBrand => const AssetGenImage('assets/png/ic_brand.png');
+
   /// File path: assets/png/ic_facebook.png
   AssetGenImage get icFacebook =>
       const AssetGenImage('assets/png/ic_facebook.png');

@@ -1,16 +1,26 @@
 import 'package:flutter/material.dart';
+import '../../ui.dart';
 
 abstract class BaseUiStateNoBloc<S extends StatefulWidget> extends State<S> {
+  push<T>(String name, {Object? arguments}) => Navigator.of(context).pushNamed<T>(name, arguments: arguments);
 
-  push<T>(String name) => Navigator.of(context).pushNamed<T>(name);
+  pushAndRemoveUntil<T extends Object?>(
+    String name, {
+    RoutePredicate? predicate,
+    Object? arguments,
+  }) =>
+      Navigator.of(context).pushNamedAndRemoveUntil(name, predicate ?? (route) => false, arguments: arguments);
 
-  pop() => Navigator.of(context).pop();
+  Future<T?> popAndPushNamed<T extends Object?, TO extends Object?>(
+    String name, {
+    TO? result,
+    Object? arguments,
+  }) =>
+      Navigator.of(context).popAndPushNamed(name, arguments: arguments, result: result);
 
-  showLoadingDialog(){
+  void pop<T extends Object?>([T? result]) => Navigator.of(context).pop(result);
 
-  }
+  showLoadingDialog() {}
 
-  closeLoadingDialog(){
-
-  }
+  closeLoadingDialog() {}
 }

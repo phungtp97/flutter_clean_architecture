@@ -1,16 +1,27 @@
-import 'package:flutter/cupertino.dart';
+import 'package:injectable/injectable.dart';
+import '../../blocs/home/home.dart';
+import '../../core/base/base.dart';
+import '../../ui.dart';
 
-class HomePage extends StatefulWidget{
-  const HomePage({super.key});
+@Named(Routes.home)
+@Injectable(as: Widget)
+class HomePage extends StatefulWidget {
+  const HomePage() : super(key: null);
 
   @override
   State<HomePage> createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageState extends BaseUiState<HomePage, HomeBloc> {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
+    return Scaffold(
+      appBar: AppBar(title: const Text('home')),
+    );
+  }
+
+  @override
+  void commandListener(Command c) {
+    pushAndRemoveUntil(Routes.home);
   }
 }

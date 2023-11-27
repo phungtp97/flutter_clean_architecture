@@ -1,15 +1,20 @@
-import 'package:async/async.dart';
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'base.dart';
 
 abstract class BaseUiState<S extends StatefulWidget, B extends BaseBloc> extends BaseUiStateNoBloc<S> {
   B bloc = GetIt.I.get<B>();
 
-  SubscriptionStream<>
+  late final StreamSubscription<Command> _commandSubscription = bloc.commandStream.listen((event) {
+    commandListener(event);
+  });
+
+  void commandListener(Command c);
 
   @override
   void dispose() {
     bloc.dispose();
+    _commandSubscription.cancel();
     super.dispose();
   }
 }

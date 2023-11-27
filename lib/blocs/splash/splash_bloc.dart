@@ -1,6 +1,8 @@
-import 'package:flutter_clean_architecture/blocs/splash/splash_command.dart';
-import 'package:flutter_clean_architecture/core/base/base.dart';
+import 'package:injectable/injectable.dart';
+import '../../core/base/base.dart';
+import 'splash_command.dart';
 
+@injectable
 class SplashBloc extends BaseBloc<EmptyState, SplashCommand> {
   SplashBloc() : super(EmptyState());
 

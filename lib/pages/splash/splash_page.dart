@@ -1,7 +1,6 @@
-import 'package:flutter/material.dart';
-
+import '../../blocs/splash/splash.dart';
 import '../../core/base/base.dart';
-import '../../gen/assets.gen.dart';
+import '../../ui.dart';
 
 class SplashPage extends StatefulWidget {
 
@@ -11,18 +10,11 @@ class SplashPage extends StatefulWidget {
   State<SplashPage> createState() => _SplashPageState();
 }
 
-class _SplashPageState extends BaseUiState<SplashPage> {
+class _SplashPageState extends BaseUiState<SplashPage, SplashBloc> {
 
   @override
   void initState() {
-    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-
-    });
     super.initState();
-  }
-
-  void navigate(){
-
   }
 
   @override
@@ -38,8 +30,19 @@ class _SplashPageState extends BaseUiState<SplashPage> {
             borderRadius: BorderRadius.circular(28),
           ),
           clipBehavior: Clip.antiAlias,
+          child: SizedBox(
+              width: 144,
+              height: 144,
+              child: Assets.png.icBrand.image()),
         ),
       ),
     );
+  }
+
+  @override
+  void commandListener(Command c) {
+    if(c is SplashCommandNavLogin){
+      pushAndRemoveUntil(Routes.home);
+    }
   }
 }
