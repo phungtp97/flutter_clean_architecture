@@ -42,14 +42,14 @@ dependencies:
   cached_network_image:
   cupertino_icons: ^1.0.2
 
-  # firebase
+  # Firebase
   firebase_core:
   firebase_auth:
   firebase_messaging:
   firebase_crashlytics:
   firebase_analytics:
 
-  # service
+  # Service
   path_provider:
   connectivity_plus:
   device_info_plus:
@@ -81,6 +81,9 @@ dependencies:
 
   # Responsive
   responsive_framework:
+
+  # UI
+  flutter_smart_dialog:
 
 dev_dependencies:
   flutter_test:

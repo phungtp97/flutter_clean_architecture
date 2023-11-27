@@ -1,12 +1,11 @@
 import 'dart:ui';
-
-import 'package:flutter_clean_architecture/blocs/app/app.dart';
-import 'package:flutter_clean_architecture/core/base/base.dart';
-import 'package:flutter_clean_architecture/local/local.dart';
 import 'package:injectable/injectable.dart';
-
+import '../../core/base/base_bloc.dart';
 import '../../enums/enums.dart';
-import '../../helper/helper.dart';
+import '../../local/local.dart';
+import '../../utils/helper/helper.dart';
+import 'app_command.dart';
+import 'app_state.dart';
 
 @singleton
 class AppBloc extends BaseBloc<AppState, AppCommand> {

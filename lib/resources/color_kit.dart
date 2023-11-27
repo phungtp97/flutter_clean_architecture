@@ -11,6 +11,10 @@ class ColorKit {
   static const Color cF5F5F5 = Color(0xfff5f5f5);
   static const Color textColor = black4;
 
+  // White
+  static const Color white1 = Color(0xFFffffff);
+  static const Color white2 = Color(0xffe2e1e1);
+
   // Black
   static const Color black1 = Color(0xFF4d4d4d);
   static const Color black2 = Color(0xFF3c3c3c);
