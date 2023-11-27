@@ -23,6 +23,6 @@ class _HomePageState extends BaseUiState<HomePage, HomeBloc> {
 
   @override
   void commandListener(Command c) {
-    
+
   }
 }
