@@ -5,9 +5,13 @@ import 'base.dart';
 abstract class BaseUiState<S extends StatefulWidget, B extends BaseBloc> extends BaseUiStateNoBloc<S> {
   B bloc = GetIt.I.get<B>();
 
-  late final StreamSubscription<Command> _commandSubscription = bloc.commandStream.listen((event) {
-    commandListener(event);
-  });
+  late final StreamSubscription<Command> _commandSubscription;
+
+  BaseUiState(){
+    _commandSubscription = bloc.commandStream.listen((event) {
+      commandListener(event);
+    });
+  }
 
   void commandListener(Command c);
 

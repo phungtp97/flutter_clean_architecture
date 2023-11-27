@@ -3,7 +3,6 @@ import '../../core/base/base.dart';
 import '../../ui.dart';
 
 class SplashPage extends StatefulWidget {
-
   const SplashPage({super.key});
 
   @override
@@ -11,29 +10,23 @@ class SplashPage extends StatefulWidget {
 }
 
 class _SplashPageState extends BaseUiState<SplashPage, SplashBloc> {
-
   @override
   void initState() {
+    bloc.init();
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        decoration: const BoxDecoration(
-          color: Color(0xFFFFFFFF),
-        ),
-        alignment: Alignment.center,
+      backgroundColor: ColorKit.primaryBackground,
+      body: Center(
         child: Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(28),
           ),
           clipBehavior: Clip.antiAlias,
-          child: SizedBox(
-              width: 144,
-              height: 144,
-              child: Assets.png.icBrand.image()),
+          child: SizedBox(width: 200, height: 200, child: Assets.svg.icBrand.svg(height: 200, width: 200)),
         ),
       ),
     );
@@ -41,7 +34,7 @@ class _SplashPageState extends BaseUiState<SplashPage, SplashBloc> {
 
   @override
   void commandListener(Command c) {
-    if(c is SplashCommandNavLogin){
+    if (c is SplashCommandNavLogin) {
       pushAndRemoveUntil(Routes.home);
     }
   }

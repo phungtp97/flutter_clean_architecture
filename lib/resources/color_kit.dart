@@ -7,7 +7,7 @@ class ColorKit {
   static const Color primary1 = Color(0xFF73a435);
   static const Color primary2 = Color(0xFF94b344);
   static const Color primary3 = Color(0xFFc8d39f);
-  static const Color primaryBackground = Color(0xFFfcfdf5);
+  static const Color primaryBackground = Color(0xFFf7f7ef);
   static const Color cF5F5F5 = Color(0xfff5f5f5);
   static const Color textColor = black4;
 

@@ -70,6 +70,9 @@ class $AssetsSvgGen {
   /// File path: assets/svg/ic_box.svg
   SvgGenImage get icBox => const SvgGenImage('assets/svg/ic_box.svg');
 
+  /// File path: assets/svg/ic_brand.svg
+  SvgGenImage get icBrand => const SvgGenImage('assets/svg/ic_brand.svg');
+
   /// File path: assets/svg/ic_camera.svg
   SvgGenImage get icCamera => const SvgGenImage('assets/svg/ic_camera.svg');
 

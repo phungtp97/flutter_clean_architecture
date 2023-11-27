@@ -16,12 +16,13 @@ class _HomePageState extends BaseUiState<HomePage, HomeBloc> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: ColorKit.primaryBackground,
       appBar: AppBar(title: const Text('home')),
     );
   }
 
   @override
   void commandListener(Command c) {
-    pushAndRemoveUntil(Routes.home);
+    
   }
 }

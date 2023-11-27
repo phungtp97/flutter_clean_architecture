@@ -11,9 +11,9 @@ class BaseBloc<S extends BaseState, C extends Command> extends Cubit<S> {
   late final BehaviorSubject<C> _commandController = BehaviorSubject<C>();
   late final BehaviorSubject<bool> _loadingController = BehaviorSubject.seeded(false);
 
-  late final StreamSubscription<C> _commandSubscription = _commandController.stream.listen((event) {
-    commandListener(event);
-  });
+  // late final StreamSubscription<C> _commandSubscription = _commandController.stream.listen((event) {
+  //   commandListener(event);
+  // });
 
   bool get hasConnection => GetIt.I.get<ConnectivityService>().hasInternetConnection;
 
@@ -31,7 +31,9 @@ class BaseBloc<S extends BaseState, C extends Command> extends Cubit<S> {
 
   @mustCallSuper
   void commandListener(C c) {
-    tracker.trackCommand(TrackerParams(object: c, ));
+    tracker.trackCommand(TrackerParams(
+      object: c,
+    ));
   }
 
   @mustCallSuper
@@ -39,6 +41,6 @@ class BaseBloc<S extends BaseState, C extends Command> extends Cubit<S> {
     _loadingController.close();
     _errorController.close();
     _commandController.close();
-    _commandSubscription.cancel();
+    //_commandSubscription.cancel();
   }
 }
