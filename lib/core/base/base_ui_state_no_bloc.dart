@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import '../../ui.dart';
 
-abstract class BaseUiStateNoBloc<S extends StatefulWidget> extends State<S> {
+abstract class BaseUiStateNoBloc<E extends StatefulWidget> extends State<E> {
+  S get localization => S.of(context);
+
   push<T>(String name, {Object? arguments}) => Navigator.of(context).pushNamed<T>(name, arguments: arguments);
 
   pushAndRemoveUntil<T extends Object?>(

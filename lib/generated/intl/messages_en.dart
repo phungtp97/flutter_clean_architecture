@@ -38,6 +38,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "save": MessageLookupByLibrary.simpleMessage("Save"),
         "search": MessageLookupByLibrary.simpleMessage("Search"),
         "settings": MessageLookupByLibrary.simpleMessage("Settings"),
-        "share": MessageLookupByLibrary.simpleMessage("Share")
+        "share": MessageLookupByLibrary.simpleMessage("Share"),
+        "tab_bar_feed": MessageLookupByLibrary.simpleMessage("Feed"),
+        "tab_bar_map": MessageLookupByLibrary.simpleMessage("Map"),
+        "tab_bar_profile": MessageLookupByLibrary.simpleMessage("Profile"),
+        "tab_bar_rank": MessageLookupByLibrary.simpleMessage("Rank")
       };
 }

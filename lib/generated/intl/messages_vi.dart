@@ -37,6 +37,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "save": MessageLookupByLibrary.simpleMessage("Lưu"),
         "search": MessageLookupByLibrary.simpleMessage("Tìm kiếm"),
         "settings": MessageLookupByLibrary.simpleMessage("Cài Đặt"),
-        "share": MessageLookupByLibrary.simpleMessage("Chia sẻ")
+        "share": MessageLookupByLibrary.simpleMessage("Chia sẻ"),
+        "tab_bar_feed": MessageLookupByLibrary.simpleMessage("Tin"),
+        "tab_bar_map": MessageLookupByLibrary.simpleMessage("Bản đồ"),
+        "tab_bar_profile": MessageLookupByLibrary.simpleMessage("Tôi"),
+        "tab_bar_rank": MessageLookupByLibrary.simpleMessage("Hạng")
       };
 }

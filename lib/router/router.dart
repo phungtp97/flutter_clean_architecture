@@ -32,10 +32,10 @@ class Routes {
         body: Center(
           child: Builder(
             builder: (context) {
-              return const Padding(
-                padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 32.0),
+              return Padding(
+                padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 32.0),
                 child: Text(
-                  '404 NOT FOUND',
+                  '${settings.name} not found',
                   textAlign: TextAlign.center,
                 ),
               );
@@ -46,13 +46,19 @@ class Routes {
     }
 
     if (transparentRoutes.contains(settings.name)) {
-      return MaterialTransparentRoute(builder: (_) => widget, settings: settings);
+      return MaterialTransparentRoute(
+          builder: (_) => widget, settings: settings);
     }
 
-    if (settings.arguments is RouteArguments && !(settings.arguments as RouteArguments).opaque) {
-      RouteSettings newSettings =
-          RouteSettings(name: settings.name, arguments: (settings.arguments as RouteArguments).data);
-      return PageRouteBuilder(opaque: false, pageBuilder: (_, __, ___) => widget, settings: newSettings);
+    if (settings.arguments is RouteArguments &&
+        !(settings.arguments as RouteArguments).opaque) {
+      RouteSettings newSettings = RouteSettings(
+          name: settings.name,
+          arguments: (settings.arguments as RouteArguments).data);
+      return PageRouteBuilder(
+          opaque: false,
+          pageBuilder: (_, __, ___) => widget,
+          settings: newSettings);
     }
 
     if (transitionBottomToTops.contains(settings.name)) {

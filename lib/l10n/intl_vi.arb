@@ -1,7 +1,7 @@
 {
   "change_language": "Đổi ngôn ng",
-  "search" : "Tìm kiếm",
-  "me" : "Me",
+  "search": "Tìm kiếm",
+  "me": "Me",
   "edit": "Chỉnh sửa",
   "history": "Lịch sử",
   "share": "Chia sẻ",
@@ -12,5 +12,9 @@
   "please_enter_nickname": "Xin hãy nhập nickname",
   "nickname_not_available": "Nickname đã được sử dụng",
   "save": "Lưu",
-  "others": "Khác"
+  "others": "Khác",
+  "tab_bar_feed": "Tin",
+  "tab_bar_map": "Bản đồ",
+  "tab_bar_rank": "Hạng",
+  "tab_bar_profile": "Tôi"
 }

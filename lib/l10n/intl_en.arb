@@ -1,7 +1,7 @@
 {
   "change_language": "Change language",
-  "search" : "Search",
-  "me" : "me",
+  "search": "Search",
+  "me": "me",
   "edit": "Edit",
   "history": "History",
   "share": "Share",
@@ -12,5 +12,9 @@
   "please_enter_nickname": "Please enter your nickname",
   "nickname_not_available": "This nickname is not available",
   "save": "Save",
-  "others": "others"
+  "others": "others",
+  "tab_bar_feed": "Feed",
+  "tab_bar_map": "Map",
+  "tab_bar_rank": "Rank",
+  "tab_bar_profile": "Profile"
 }

@@ -5,7 +5,7 @@
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
-// ignore_for_file: directives_ordering,unnecessary_import
+// ignore_for_file: directives_ordering,unnecessary_import,implicit_dynamic_list_literal,deprecated_member_use
 
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -26,6 +26,9 @@ class $AssetsPngGen {
 
   /// File path: assets/png/naver.png
   AssetGenImage get naver => const AssetGenImage('assets/png/naver.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [icBrand, icFacebook, icKakao, naver];
 }
 
 class $AssetsSvgGen {
@@ -129,6 +132,22 @@ class $AssetsSvgGen {
   SvgGenImage get icHeartFilled =>
       const SvgGenImage('assets/svg/ic_heart_filled.svg');
 
+  /// File path: assets/svg/ic_history_filled.svg
+  SvgGenImage get icHistoryFilled =>
+      const SvgGenImage('assets/svg/ic_history_filled.svg');
+
+  /// File path: assets/svg/ic_history_outlined.svg
+  SvgGenImage get icHistoryOutlined =>
+      const SvgGenImage('assets/svg/ic_history_outlined.svg');
+
+  /// File path: assets/svg/ic_home_filled.svg
+  SvgGenImage get icHomeFilled =>
+      const SvgGenImage('assets/svg/ic_home_filled.svg');
+
+  /// File path: assets/svg/ic_home_outlined.svg
+  SvgGenImage get icHomeOutlined =>
+      const SvgGenImage('assets/svg/ic_home_outlined.svg');
+
   /// File path: assets/svg/ic_horizontal_dot.svg
   SvgGenImage get icHorizontalDot =>
       const SvgGenImage('assets/svg/ic_horizontal_dot.svg');
@@ -142,6 +161,14 @@ class $AssetsSvgGen {
 
   /// File path: assets/svg/ic_key.svg
   SvgGenImage get icKey => const SvgGenImage('assets/svg/ic_key.svg');
+
+  /// File path: assets/svg/ic_map_filled.svg
+  SvgGenImage get icMapFilled =>
+      const SvgGenImage('assets/svg/ic_map_filled.svg');
+
+  /// File path: assets/svg/ic_map_outlined.svg
+  SvgGenImage get icMapOutlined =>
+      const SvgGenImage('assets/svg/ic_map_outlined.svg');
 
   /// File path: assets/svg/ic_map_pin.svg
   SvgGenImage get icMapPin => const SvgGenImage('assets/svg/ic_map_pin.svg');
@@ -183,9 +210,24 @@ class $AssetsSvgGen {
   /// File path: assets/svg/ic_plus.svg
   SvgGenImage get icPlus => const SvgGenImage('assets/svg/ic_plus.svg');
 
+  /// File path: assets/svg/ic_profile_filled.svg
+  SvgGenImage get icProfileFilled =>
+      const SvgGenImage('assets/svg/ic_profile_filled.svg');
+
+  /// File path: assets/svg/ic_profile_outlined.svg
+  SvgGenImage get icProfileOutlined =>
+      const SvgGenImage('assets/svg/ic_profile_outlined.svg');
+
   /// File path: assets/svg/ic_promotion.svg
   SvgGenImage get icPromotion =>
       const SvgGenImage('assets/svg/ic_promotion.svg');
+
+  /// File path: assets/svg/ic_ranking.svg
+  SvgGenImage get icRanking => const SvgGenImage('assets/svg/ic_ranking.svg');
+
+  /// File path: assets/svg/ic_ranking_disabled.svg
+  SvgGenImage get icRankingDisabled =>
+      const SvgGenImage('assets/svg/ic_ranking_disabled.svg');
 
   /// File path: assets/svg/ic_report.svg
   SvgGenImage get icReport => const SvgGenImage('assets/svg/ic_report.svg');
@@ -239,6 +281,83 @@ class $AssetsSvgGen {
 
   /// File path: assets/svg/shopping.svg
   SvgGenImage get shopping => const SvgGenImage('assets/svg/shopping.svg');
+
+  /// List of all assets
+  List<SvgGenImage> get values => [
+        icAccessories,
+        icAdd,
+        icAddImage,
+        icAlert,
+        icArrowBack,
+        icArrowForward,
+        icArrowRight,
+        icArrowRightOutlined,
+        icBack,
+        icBlock,
+        icBox,
+        icBrand,
+        icCamera,
+        icCart,
+        icCheck,
+        icCheckedRadio,
+        icClear,
+        icClose,
+        icComment,
+        icCopy,
+        icDelete,
+        icDot,
+        icDropdown,
+        icEdit,
+        icError,
+        icFilter,
+        icForward,
+        icHashtag,
+        icHeart,
+        icHeartFilled,
+        icHistoryFilled,
+        icHistoryOutlined,
+        icHomeFilled,
+        icHomeOutlined,
+        icHorizontalDot,
+        icInstagram,
+        icKakao,
+        icKey,
+        icMapFilled,
+        icMapOutlined,
+        icMapPin,
+        icMapPinColored,
+        icMapPinOutlined,
+        icMessage,
+        icMultiplePhotos,
+        icNews,
+        icNotify,
+        icPackage,
+        icPhone,
+        icPhoto,
+        icPlaceMark,
+        icPlus,
+        icProfileFilled,
+        icProfileOutlined,
+        icPromotion,
+        icRanking,
+        icRankingDisabled,
+        icReport,
+        icSearch,
+        icSelectPhoto,
+        icSetting,
+        icShare,
+        icShieldWarning,
+        icStarFilled,
+        icSuccess,
+        icSupport,
+        icTrash,
+        icUp,
+        icVisibleOff,
+        icVisibleOn,
+        icWallet,
+        icWarning,
+        shopping
+      ];
 }
 
 class Assets {
@@ -306,6 +425,17 @@ class AssetGenImage {
     );
   }
 
+  ImageProvider provider({
+    AssetBundle? bundle,
+    String? package,
+  }) {
+    return AssetImage(
+      _assetName,
+      bundle: bundle,
+      package: package,
+    );
+  }
+
   String get path => _assetName;
 
   String get keyName => _assetName;
@@ -327,13 +457,14 @@ class SvgGenImage {
     AlignmentGeometry alignment = Alignment.center,
     bool allowDrawingOutsideViewBox = false,
     WidgetBuilder? placeholderBuilder,
-    Color? color,
-    BlendMode colorBlendMode = BlendMode.srcIn,
     String? semanticsLabel,
     bool excludeFromSemantics = false,
+    SvgTheme theme = const SvgTheme(),
+    ColorFilter? colorFilter,
     Clip clipBehavior = Clip.hardEdge,
-    bool cacheColorFilter = false,
-    SvgTheme? theme,
+    @deprecated Color? color,
+    @deprecated BlendMode colorBlendMode = BlendMode.srcIn,
+    @deprecated bool cacheColorFilter = false,
   }) {
     return SvgPicture.asset(
       _assetName,
@@ -347,15 +478,18 @@ class SvgGenImage {
       alignment: alignment,
       allowDrawingOutsideViewBox: allowDrawingOutsideViewBox,
       placeholderBuilder: placeholderBuilder,
-      color: color,
-      colorBlendMode: colorBlendMode,
       semanticsLabel: semanticsLabel,
       excludeFromSemantics: excludeFromSemantics,
+      theme: theme,
+      colorFilter: colorFilter,
+      color: color,
+      colorBlendMode: colorBlendMode,
       clipBehavior: clipBehavior,
       cacheColorFilter: cacheColorFilter,
-      theme: theme,
     );
   }
 
   String get path => _assetName;
+
+  String get keyName => _assetName;
 }

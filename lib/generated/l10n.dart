@@ -189,6 +189,46 @@ class S {
       args: [],
     );
   }
+
+  /// `Feed`
+  String get tab_bar_feed {
+    return Intl.message(
+      'Feed',
+      name: 'tab_bar_feed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Map`
+  String get tab_bar_map {
+    return Intl.message(
+      'Map',
+      name: 'tab_bar_map',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Rank`
+  String get tab_bar_rank {
+    return Intl.message(
+      'Rank',
+      name: 'tab_bar_rank',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Profile`
+  String get tab_bar_profile {
+    return Intl.message(
+      'Profile',
+      name: 'tab_bar_profile',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -6,3 +6,4 @@ export '../../gen/assets.gen.dart';
 export 'dimens/dimens.dart';
 export 'extensions/extensions.dart';
 export 'resources/design/design.dart';
+export 'generated/l10n.dart';
