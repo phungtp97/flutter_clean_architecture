@@ -9,7 +9,7 @@ import 'app_state.dart';
 
 @singleton
 class AppBloc extends BaseBloc<AppState, AppCommand> {
-  final SharedPrefServices _sharedPrefs;
+  final SharedPrefService _sharedPrefs;
 
   AppBloc(this._sharedPrefs) : super(AppState(locale: const Locale('en', 'US')));
 

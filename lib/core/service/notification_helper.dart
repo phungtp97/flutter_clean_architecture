@@ -9,7 +9,6 @@ import '../../data/repository/repository.dart';
 
 typedef PayloadCallback = Function(Map<String, dynamic> data);
 
-@singleton
 class NotificationHelper {
   final UserRepository? userRepo;
   final PayloadCallback onInitMessage;

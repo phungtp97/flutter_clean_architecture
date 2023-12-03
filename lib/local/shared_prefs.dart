@@ -1,10 +1,9 @@
 part of 'local.dart';
 
-@singleton
-class SharedPrefServices {
+class SharedPrefService {
   late final SharedPreferences _prefs;
 
-  SharedPrefServices();
+  SharedPrefService();
 
   Future<void> init() async {
     _prefs = await SharedPreferences.getInstance();

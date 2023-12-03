@@ -11,15 +11,22 @@ import 'injectable.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   configureDependencies();
-  await GetIt.I.get<SharedPrefServices>().init();
   runApp(const App());
 }
 
 @module
 abstract class RegisterService {
-  final SharedPrefServices _sharedPrefServices;
+  SharedPrefService? _prefs;
 
-  RegisterService(this._sharedPrefServices);
+  @preResolve
+  @singleton
+  Future<SharedPrefService> get prefs async {
+    if(_prefs != null) return _prefs!;
+    final sharedPrefService = SharedPrefService();
+    await sharedPrefService.init();
+    _prefs = sharedPrefService;
+    return _prefs!;
+  }
 
   @Named('trackerId')
   String get trackerId => '1234567890';
@@ -30,45 +37,42 @@ abstract class RegisterService {
   @Named('baseUrl')
   String get baseUrl => 'https://api.yourhost.com';
 
+  @preResolve
+  @singleton
   @Named('userDio')
-  Dio get userDio {
+  Future<Dio> get userDio async {
     final dio = Dio();
-      dio.interceptors.add(DioLogInterceptor());
+
+    dio.interceptors.add(DioLogInterceptor());
     dio.interceptors.add(InterceptorsWrapper(
-          onRequest: (RequestOptions options, RequestInterceptorHandler handler) {
-            if (options.method == 'POST') {
-              options.headers['Content-Type'] = 'application/json';
-            }
-            if (_sharedPrefServices.token != null &&
-                !options.headers.containsKey('Authorization')) {
-              options.headers['Authorization'] =
-              'Bearer ${_sharedPrefServices.token}';
-            }
-            notifyLogger();
-            return handler.next(options);
-          }, onResponse: (response, handler) async {
-        notifyLogger();
-        return handler.next(response);
-      }, onError: (e, handler) async {
-        print(
-            'api exception -- ${e.requestOptions.path} ${e.requestOptions.uri
-                .path}');
-        notifyLogger();
-        return handler.next(e);
-      }));
+        onRequest: (RequestOptions options, RequestInterceptorHandler handler) {
+      if (options.method == 'POST') {
+        options.headers['Content-Type'] = 'application/json';
+      }
+      if (_prefs!.token != null &&
+          !options.headers.containsKey('Authorization')) {
+        options.headers['Authorization'] =
+            'Bearer ${_prefs!.token}';
+      }
+      NetworkInspector().addLog();
+      return handler.next(options);
+    }, onResponse: (response, handler) async {
+      NetworkInspector().addLog();
+      return handler.next(response);
+    }, onError: (e, handler) async {
+      print(
+          'api exception -- ${e.requestOptions.path} ${e.requestOptions.uri.path}');
+      NetworkInspector().addLog();
+      return handler.next(e);
+    }));
     return dio;
   }
 
   @Named('publicDio')
+  @singleton
   Dio get publicDio {
     final dio = Dio();
 
     return dio;
-  }
-
-  void notifyLogger() {
-    Future.delayed(const Duration(milliseconds: 200), () {
-      NetworkInspector().addLog();
-    });
   }
 }
