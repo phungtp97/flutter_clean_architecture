@@ -17,6 +17,10 @@ class $AssetsPngGen {
   /// File path: assets/png/ic_brand.png
   AssetGenImage get icBrand => const AssetGenImage('assets/png/ic_brand.png');
 
+  /// File path: assets/png/ic_brand_outlined.png
+  AssetGenImage get icBrandOutlined =>
+      const AssetGenImage('assets/png/ic_brand_outlined.png');
+
   /// File path: assets/png/ic_facebook.png
   AssetGenImage get icFacebook =>
       const AssetGenImage('assets/png/ic_facebook.png');
@@ -28,7 +32,8 @@ class $AssetsPngGen {
   AssetGenImage get naver => const AssetGenImage('assets/png/naver.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [icBrand, icFacebook, icKakao, naver];
+  List<AssetGenImage> get values =>
+      [icBrand, icBrandOutlined, icFacebook, icKakao, naver];
 }
 
 class $AssetsSvgGen {

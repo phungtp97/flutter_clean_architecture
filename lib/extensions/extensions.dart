@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 
 extension ExceptionUtilities on Object {
   Exception formatException() {
-    if (this is DioException) {
-      return Exception('${(this as DioException).response?.statusMessage}');
+    if (this is DioError) {
+      return Exception('${(this as DioError).response?.statusMessage}');
     } else {
       throw this;
     }
