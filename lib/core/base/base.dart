@@ -8,3 +8,4 @@ export 'package:rxdart/rxdart.dart';
 export 'package:flutter_bloc/flutter_bloc.dart';
 export 'package:get_it/get_it.dart';
 export 'package:flutter/foundation.dart';
+export 'base_model.dart';

@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
-import '../pages/splash/splash_page.dart';
-import '../widgets/custom_page_route/custom_page_route.dart';
 import 'route_arguments.dart';
+import '../../pages/splash/splash_page.dart';
+import '../../widgets/custom_page_route/custom_page_route.dart';
 
 class Routes {
   //? Splash route

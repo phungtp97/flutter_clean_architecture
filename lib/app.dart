@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_clean_architecture/router/router.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get_it/get_it.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'blocs/blocs.dart';
+import 'core/router/router.dart';
 import 'generated/l10n.dart';
 
 class App extends StatefulWidget {

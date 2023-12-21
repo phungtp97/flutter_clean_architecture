@@ -1,9 +1,9 @@
-import 'package:flutter_clean_architecture/pages/history/history_page.dart';
-import 'package:flutter_clean_architecture/pages/pages.dart';
 import 'package:injectable/injectable.dart';
 import '../../blocs/home/home.dart';
 import '../../core/base/base.dart';
+import '../../core/router/router.dart';
 import '../../ui.dart';
+import '../pages.dart';
 
 @Named(Routes.home)
 @Injectable(as: Widget)

@@ -96,6 +96,7 @@ dev_dependencies:
   intl_translation:
   injectable_generator:
   build_runner:
+  json_serializable:
   flutter_lints: ^2.0.0
 
 flutter_gen:
@@ -153,3 +154,22 @@ flutter:
   # see https://flutter.dev/custom-fonts/#from-packages
 flutter_intl:
   enabled: true
+
+targets:
+  $default:
+    builders:
+      json_serializable:
+        options:
+          any_map: false
+          checked: true
+          constructor: ""
+          create_factory: true
+          create_field_map: false
+          create_per_field_to_json: false
+          create_to_json: true
+          disallow_unrecognized_keys: false
+          explicit_to_json: false
+          field_rename: none
+          generic_argument_factories: false
+          ignore_unannotated: false
+          include_if_null: true

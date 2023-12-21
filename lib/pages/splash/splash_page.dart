@@ -1,5 +1,6 @@
 import '../../blocs/splash/splash.dart';
 import '../../core/base/base.dart';
+import '../../core/router/router.dart';
 import '../../ui.dart';
 
 class SplashPage extends StatefulWidget {

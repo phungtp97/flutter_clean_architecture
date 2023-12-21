@@ -7,7 +7,6 @@ import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../../../ui.dart';
-import '../design.dart';
 
 class AlertDialogWidget extends StatefulWidget {
   final Widget dialogHeadline;
